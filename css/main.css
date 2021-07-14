@@ -1,0 +1,427 @@
+/*--------------reset---------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    /*usada para calcular larguras (widths) e alturas (heights) dos elementos.*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav, ul {
+    /*o nav também serve como ul*/
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /*tirar sublinhados das linhas*/
+    cursor: pointer;
+    /*mostrar quando o ponteiro está em cima de um elemento link*/
+    opacity: 0.9;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+/*mudar ao passar cursos no link*/
+
+/*-----------------header------------------*/
+
+header {
+    display: flex;
+    /*faz o alinhamento do header automático*/
+    width: 100%;
+    position: absolute;
+    /*vai ficar por cima do restante*/
+    top: 0;
+    left: 0;
+    /*zerar tamanho top e left*/
+    justify-content: space-between;
+    /*cria espaçamento entre o lado direito e esquerdo da nav*/
+    align-items: center;
+    /*alinhamento central e vertical do menu*/
+    padding: 20px/*top e base*/
+    50px/*laterais*/
+    ;
+    background-color: #fff;
+    height: 6rem;
+}
+
+header img {
+    /*logo*/
+    width: 200px;
+    margin-bottom: 15px;
+    /*espaçamento da imagem com conteúdo*/
+}
+
+header nav {
+    /*lista*/
+    display: flex;
+    /*alinhar lista*/
+}
+
+header li a {
+    color: rgb(43, 43, 119);
+    text-transform: uppercase;
+    font-weight: bold; /*negrito*/
+}
+
+header li {
+    margin: 0/*top e base*/
+    15px/*laterais*/
+    ;
+}
+
+header li:first-child {
+    margin-left: 0;
+}
+
+/*remove a margem do primeiro elemento da lista (Home)*/
+
+header li:last-child {
+    margin-right: 0;
+}
+
+/*remove a margem do ultimo elemento da lista (contact)*/
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        /*quando reduzir a tela o nav ficara com a altura natural dela*/
+    }
+    header img {
+        margin-bottom: 15px;
+    }
+}
+
+/*caso a header ultrapasse 700px reduzindo o tamanho da tela, o conteúdo pula para próxima linha em forma de coluna.*/
+
+/*section*/
+
+.show {
+    display: flex;
+    background-image: url(../img/Happiness-family-colorful-balloons_3840x2160.jpg);
+    background-size: cover;
+    /*cobrir a tela inteira na melhor resolução possivel em uma única imagem*/
+    min-height: 100vh;
+    /*medida da altura da imagem de cima para baixo*/
+    color: rgb(43, 43, 119);
+    justify-content: center;
+    /*alinhamento horizontal*/
+    align-items: center;
+    /*alinhamento vertical*/
+    flex-direction: column;
+    /*h1, h3 e link foram colocados em ordem de coluna*/
+    text-align: center;
+    /*alinha texto no centro da pagina quando reduzida*/
+}
+
+.show h1 {
+    font-size: 3.2rem;
+    /*rem diferentemente do em pode ser diferente para cada elemento, o rem é constante em todo o documento.*/
+    margin-bottom: 15px;
+}
+
+.show h3 {
+    font-size: 2rem;
+    margin-bottom: 90px;
+}
+
+.show .btn {
+    background-color: #fff;
+    border-radius: 5px;
+    /*arredondamento da borda*/
+    color: rgb(43, 43, 119);
+    padding: 20px 20px;
+    /*aumento do diâmento do background*/
+    text-transform: uppercase;
+    font-weight: bold;
+    /*negrito*/
+    margin-bottom: 70px;
+}
+
+.show hr {
+    width: 200px;
+    height: 2px;
+    background-color: rgb(43, 43, 119);
+    margin-bottom: 70px;
+    border: none;
+}
+
+@media(max-width: 700px) {
+    .show h1 {
+        font-size: 2.5rem;
+    }
+    .show h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/*conhcer loja*/
+
+.c-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*Alinhamento vertical*/
+    padding: 50px 100px;
+}
+
+.c-product h3 {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+    /*margin area na parte inferior de um elemento.*/
+    color: rgb(43, 43, 119);
+    text-align: center;
+}
+
+.c-product p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: rgb(43, 43, 119);
+    text-align: center;
+}
+
+.c-product hr {
+    /*linha divisória*/
+    width: 200px;
+    height: 2px;
+    background-color: rgb(43, 43, 119);
+    margin-bottom: 70px;
+    border: none;
+    /*tirar bordar da linha*/
+}
+
+/*grid*/
+
+.c-product .grid {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    /*quebra para próxima linha quando um elemento não couber*/
+}
+
+.c-product .grid li {
+    /*espaço do grid*/
+    height: 350px;
+    padding: 20px;
+    border-radius: 4px;
+    background-clip: content-box;
+    /*- border-box
+    O fundo se extende até fora da fronteira da borda (mas por baixo da borda na ordenação-z).
+    - padding-box
+    Nenhum fundo é desenhado abaixo da borda (o fundo se extende até a borda externa do preenchimento).
+    - content-box
+    O fundo é desenhado dentro (cortado) a caixa de conteúdo.
+    - text 
+    O fundo é desenhado dentro (cortado) do texto aparente.*/
+    background-size: cover;
+    background-position: center;
+    /*imagem posicionada no centro da pagina*/
+}
+
+.c-product .grid li.small {
+    /*obs: não deixar espaço entre o li e o small pois os dois estão no html*/
+    flex-basis: 40%;
+    /* define o tamanho inicial que um item deve ter antes que o espaço ao seu redor seja distribuído. Ou seja, dependendo da direção do eixo principal (horizontal ou vertical), essa propriedade define a largura ou altura mínima do elemento antes que ele seja redimensionado por outras propriedades.*/
+}
+
+.c-product .grid li.large {
+    flex-basis: 60%;
+}
+
+@media(max-width: 700px) {
+    .c-product .grid li.large, .c-product .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+/*ao reduzir a pagina, as imagens ficam responsivas*/
+
+/*caracteristicas*/
+
+.caract {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 100px;
+    background-color: rgb(43, 43, 119);
+    ;
+}
+
+.caract h3 {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+}
+
+.caract p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+}
+
+.caract hr {
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.caract .grid {
+    display: flex;
+    width: 100%;
+    /*vai ocupar 100% até as laterais das laterais*/
+    align-items: center;
+    /*alinha itens dentro do grid*/
+}
+
+.caract .grid li {
+    padding: 0px 30px;
+    /*distância entre o conteúdo de um elemento e suas bordas.*/
+    flex-direction: column;
+    /**deixou o conteúdo que está dentro da lista em colunas lado a lado*/
+    text-align: center;
+    /*centraliza ícone, h4 e parágrafo*/
+}
+
+.caract .grid li i {
+    font-size: 3.5rem;
+    /*icon é considerado font*/
+    color: rgb(129, 129, 201);
+    margin-bottom: 35px;
+}
+
+.caract .grid li h4 {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+    color: rgb(129, 129, 201);
+    text-transform: uppercase;
+}
+
+.caract .grid li p {
+    color: rgb(129, 129, 201);
+    font-size: 1.5rem;
+}
+
+/*por natureza está como flex-direction: row, vamos fazer pular para próxima linha com o column*/
+
+@media(max-width: 850px) {
+    .caract .grid {
+        flex-direction: column;
+    }
+}
+
+/*Newsletter*/
+
+.nl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.nl h3 {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+    color: rgb(43, 43, 119);
+    text-align: center;
+}
+
+.nl p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: rgb(43, 43, 119);
+    text-align: center;
+}
+
+.nl hr {
+    width: 200px;
+    height: 2px;
+    background-color: rgb(43, 43, 119);
+    /*hr é sempre com background color*/
+    margin-bottom: 70px;
+    border: none;
+}
+
+.nl form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 800px;
+}
+
+.nl input {
+    padding: 15px;
+    border: 1px solid rgb(43, 43, 119);
+    border-radius: 4px;
+    margin-right: 15px;
+    flex: 1;
+    /*ocupar toda largura da tela*/
+}
+
+.nl button {
+    padding: 15px 50px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(43, 43, 119);
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media(max-width: 700px) {
+    .nl input {
+        flex-basis: 100%;
+        /*ocupar 100% da largurada tela*/
+        margin-bottom: 15px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/*footer*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 80px 80px;
+    background-color: rgb(53, 50, 50);
+    align-items: center;
+    text-align: center;
+}
+
+.footer ul {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.footer ul li {
+    margin-right: 15px;
+}
+
+/*para n aplicar o margin em todos os elementos do footer, utilizamos last child para retirar do ultimo filho*/
+
+.footer ul li:last-child {
+    margin-right: 0
+}
+
+.footer ul li a {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.footer p {
+    color: #fff;
+    font-size: 12px;
+}
