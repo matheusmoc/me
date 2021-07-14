@@ -159,6 +159,9 @@ header li:last-child {
     .show h3 {
         font-size: 1.5rem;
     }
+    .show{
+        margin-top: 200px; /*quando reduzir a tela o nav não vai sobrepor o h1*/
+    }
 }
 
 /*conhcer loja*/
