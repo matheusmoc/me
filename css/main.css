@@ -285,6 +285,7 @@ header li:last-child {
     /*vai ocupar 100% até as laterais das laterais*/
     align-items: center;
     /*alinha itens dentro do grid*/
+    text-align: center;
 }
 
 .caract .grid li {
