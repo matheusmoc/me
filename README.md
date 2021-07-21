@@ -2,4 +2,4 @@
 
 Link github pages:https://matheusmoc.github.io/shoppingday/
 
-Primeiro projeto com FELXBOX
+Primeiro projeto com FLEXBOX
